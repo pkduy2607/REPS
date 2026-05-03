@@ -1,0 +1,5 @@
+[
+ { "type": "Solar panels", "status": "INACTIVE" },
+ { "type": "Wind turbines", "status": "ACTIVE" },
+ { "type": "Hydro power", "status": "ACTIVE" }
+]

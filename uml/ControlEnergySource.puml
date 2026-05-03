@@ -1,0 +1,13 @@
+@startuml
+Actor User as user
+Boundary System as system
+Database status.json as file
+
+user -> system: View source status
+system -> file: Read source status from file
+system -> user: Prompt source selection
+user -> system: select source
+system -> system: toggle the source status
+system -> file: save new source status
+system -> user: display new source status
+@enduml

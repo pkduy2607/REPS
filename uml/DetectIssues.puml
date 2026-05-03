@@ -1,0 +1,10 @@
+@startuml
+Actor User as user
+Boundary System as system
+Database data.txt as file
+
+user -> system: Detect issues
+system -> file: Read data
+system -> system: Analyze data
+system -> user: alert issues
+@enduml

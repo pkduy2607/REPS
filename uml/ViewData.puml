@@ -1,0 +1,13 @@
+@startuml
+Actor User as user
+Boundary System as system
+Database data.txt as file
+
+user -> system: View data
+system -> file: Read data from file
+system -> user: Request data type
+user -> system: Select data type
+system -> system: Filter data
+system -> system: Sort data
+system --> user: Display data
+@enduml

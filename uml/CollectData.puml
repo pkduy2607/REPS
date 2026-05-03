@@ -1,0 +1,27 @@
+@startuml
+Actor User as user
+Boundary System as system
+Actor "Fingrid API" as api
+Database data.txt as file
+
+user -> system: Collect data
+system -> user: Request energy source type
+user -> system: Select source type
+
+alt Wind
+    system -> api: get wind data
+else Solar
+    system -> api: get solar data
+else Hydro
+    system -> api: get hydro data
+end
+
+api -->> system: Return data
+
+alt API success
+    system -> file: write to file
+    system --> user: notify data stored successfully
+else API failure
+    system --> user: notify data stored failed
+end
+@enduml
